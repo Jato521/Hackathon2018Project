@@ -1,0 +1,390 @@
+#CIS major: 3 different tracks
+#Select the courses you take
+#Tells what courses are left to be taken
+
+#dictionary General CIS Track required
+GeneralReqDict=\
+{'CIS3100':'Object-Oriented Programming I',\
+ 'CIS3400': 'Database Management Systems I', \
+ 'CIS4800': 'Systems Analysis and Design',\
+ 'CIS5800': 'Information Technology Development and Project Management'}
+
+#dictionary General CIS Track elective
+GeneralEleDict=\
+{'CIS3120':'Programming for Analytics',\
+ 'CIS3150': 'Introduction to Semantic Technologies', \
+ 'CIS3367': 'Spreadsheet Applications in Business', \
+ 'CIS3444': 'E-Business Technologies', \
+ 'CIS3500': 'Networks and Telecommunications I',\
+ 'CIS3550': 'Cybersecurity',\
+ 'CIS3630': 'Principles of Web Design', \
+ 'CIS3700': 'Green IT',\
+ 'CIS3710': 'Foundations of Business Analytics', \
+ 'CIS3750': 'Social Media Technologies in Organizations',\
+ 'CIS3770': 'Usability, Privacy, and Security', \
+ 'CIS3920': 'Data Mining for Business Anaylytics',\
+ 'CIS4100': 'Object Oriented Programming II', \
+ 'CIS4110': 'Object-Oriented Programming II With Java',\
+ 'CIS4160': 'Web Applications Development', \
+ 'CIS4170': 'Data Visualization',\
+ 'CIS4350': 'Information Technology Audit',\
+ 'CIS4400': 'Data Warehousing for Analytics', \
+ 'CIS4500': 'Networks and Telecommunications II',\
+ 'CIS4610': 'Expert (Knowledge-Based) Systems and Related Technologies', \
+ 'CIS4620': 'Financial Information Technologies',\
+ 'CIS4650': 'Operating Systems Concepts', \
+ 'CIS4091': 'Special Topics in Computer Information Systems',\
+ 'CIS4092': 'Special Topics in Computer Information Systems', \
+ 'CIS4093': 'Special Topics in Computer Information Systems',\
+ 'CIS4094': 'Special Topics in Computer Information Systems', \
+ 'OPR3300': 'Quantitative Methods for Accounting',\
+ 'OPR3450': 'Quantitative Decision Making for Business I'}
+
+#dictionary Data Analytics Track required
+AnalyticReqDict=\
+{'CIS3100': 'Object-Oriented Programming I',\
+ 'CIS3120': 'Programming for Analytics', \
+ 'CIS3400': 'Database Management Systems I',\
+ 'CIS3920': 'Data Mining for Business Analytics', \
+ 'CIS4400': 'Data Warehousing for Analytics'}
+
+#dictionary Data Analytics Track elective
+AnalyticEleDict=\
+{'CIS3100': 'Object-Oriented Programming I',\
+ 'CIS3120': 'Programming for Analytics', \
+ 'CIS3150': 'Introduction to Semantic Technologies',\
+ 'CIS3710': 'Foundations of Business Analytics', \
+ 'CIS4170': 'Data Visualization',\
+ 'STA3154': 'Business Statistics II', \
+ 'STA3155': 'Regression and Forecasting Models for Business Applications', \
+ 'OPR3450': 'Quantitative Decision Making for Business I',\
+ 'OPR3451': 'Quantitative Decision Making for Business II', \
+ 'MKT4123': 'Marketing Web Analytics and Intelligence',\
+ 'MKT4561': 'Marketing Analytics'}
+
+#dictionary Information Risk Management and Cybersecurity Track required
+CyberReqDic=\
+{'CIS3100': 'Object-Oriented Programming I', \
+ 'CIS3400': 'Database Management Systems I', \
+ 'CIS3500': 'Networks and Telecommunications I', \
+ 'CIS3550': 'Cybersecurity', \
+ 'CIS4350': 'Information Technology Audit'}
+
+#dictionary Information Risk Management and Cybersecurity Track elective
+CyberEleDict=\
+{'CIS3700': 'Green IT', \
+ 'CIS3750': 'Social Media Technologies in Organizations', \
+ 'CIS3770': 'Usability, Privacy, and Security', \
+ 'CIS4100': 'Object-Oriented Programming II', \
+ 'CIS4110': 'Object-Oriented Programming II with Java', \
+ 'CIS4160': 'Web Applications Development', \
+ 'CIS4500': 'Networks and Telecommunications II',\
+ 'CIS4620': 'Financial Information Technologies', \
+ 'CIS4800': 'Systems Analysis and Design'}
+
+#END OF DICTIONARY
+
+#WRITE file with all require courses for GENERAL TRACK
+def GeneralFile():
+    File=open('General CIS Track Required Courses.txt','w')
+    File.write('CIS3100\n'+'CIS3400\n'+'CIS4800\n'+'CIS5800\n')
+    File.close()
+
+#WRITE file with all elective courses for GENERAL TRACK
+def GeneralFile2():
+    File=open('General CIS Track Elective Courses.txt','w')
+    File.write('CIS3120\n'+'CIS3150\n'+'CIS3367\n'+'CIS3444\n'\
+              +'CIS3500\n'+'CIS3550\n'+'CIS3630\n'+'CIS3700\n'\
+              +'CIS3710\n'+'CIS3750\n'+'CIS3770\n'+'CIS3920\n'\
+              +'CIS4100\n'+'CIS4110\n'+'CIS4160\n'+'CIS4170\n'\
+              +'CIS4350\n'+'CIS4400\n'+'CIS4500\n'+'CIS4610\n'\
+               +'CIS4620\n'\
+              +'CIS4650\n'+'CIS4091\n'+'CIS4092\n'+'CIS4093\n'\
+              +'CIS4094\n'+'OPR3300\n'+'OPR3450\n')
+    File.close()
+
+#WRITE file with all require courses for Data analytics track
+def AnalyticFile():
+    File=open('Data Analytics Track Required Courses.txt','w')
+    
+    #CIS3100 or CIS3120
+    #CIS3920 or STA3920
+    
+    File.write('CIS3100\n'+ 'CIS3120\n'+'CIS3400\n'+'CIS3920\n'\
+               +'CIS4400\n') 
+    
+    File.close()
+
+#WRITE file with all elective courses for data analytics track
+def AnalyticFile2():
+    File=open('Data Analytics Track Elective Courses.txt','w')
+    #CIS3100 or CIS3120
+    File.write('CIS3100\n'+'CIS3120\n'+'CIS3150\n'+'CIS3710\n'+'CIS4170\n'\
+              +'STA3154\n'+'STA3155\n'+'OPR3450\n'\
+               +'OPR3451\n'+'MKT4123\n'\
+              +'MKT4561\n')
+    File.close()
+
+#WRITE file with all require courses for CYBER TRACK
+def CyberFile():
+    File=open('Information Risk Management and Cybersecurity Track Required Courses.txt','w')
+    File.write('CIS3100\n'+'CIS3400\n'+'CIS3500\n'+'CIS3550\n'+'CIS4350\n')
+    File.close()
+
+#WRITE file with all elective courses for CYBER TRACK
+def CyberFile2():
+    File=open('Information Risk Management and Cybersecurity Track Elective Courses.txt','w')
+    File.write('CIS3700\n'+'CIS3750\n'+'CIS3770\n'+'CIS4100\n'\
+              +'CIS4110\n'+'CIS4160\n'+'CIS4500\n'\
+               +'CIS4620\n'+'CIS4800\n')
+    File.close()
+
+#input and validation for class code
+def Course_Taken_Input(Required_List,Elective_List, Count_Mark):
+
+    Input=input("Enter course code for the class you've taken with UPPERCASE letters and NO spaces: ")
+    while (Input not in Required_List) and (Input not in Elective_List):
+        print('Class not found.') 
+        Input=input('Enter a proper class code:')
+    
+    #counting the input elective classes
+    if Input in Elective_List:
+        Count_Mark+=1
+    
+    return Input, Count_Mark
+
+###
+#ANALYTIC TRACK: if course taken contains CIS3100 or CIS3120
+def AnalyticTakenClass(Amount, List_1, List_2):
+    EleCount=0
+    
+    for Count in range (Amount):
+        CourseTaken,EleCount=Course_Taken_Input(List_1, List_2, EleCount)
+        CourseTaken=CourseTaken.strip()
+        
+        if CourseTaken=='CIS3100':
+            List_1.remove('CIS3100')
+            List_2.remove('CIS3100')
+            List_1.remove('CIS3120')
+            EleCount+=1
+            
+            
+        elif CourseTaken=='CIS3120':
+            List_1.remove('CIS3120')
+            List_2.remove('CIS3120')
+            List_1.remove('CIS3100')
+            EleCount+=1
+              
+            
+        else:
+            try:
+                List_1.remove(CourseTaken)
+            except:
+                List_2.remove(CourseTaken)
+ 
+    return List_1, List_2, EleCount
+
+#OTHER 2 TRACK: remove taken courses
+def TakenClasses(Amount, List_1,List_2):
+    EleCount=0
+    for Count in range (Amount):
+        
+        CourseTaken,EleCount=Course_Taken_Input(List_1,List_2, EleCount)
+        CourseTaken=CourseTaken.strip()
+        
+        try:
+            List_1.remove(CourseTaken)
+        except:
+            List_2.remove(CourseTaken)
+        
+    return List_1, List_2, EleCount
+
+#Append courses from required and elective files
+def MakeList(File):
+    List=[]
+    for Lines in File:
+        Lines=Lines.strip('\n')
+        List.append(Lines)
+    
+    return List
+
+#print list
+def PrintList(List):  
+    for Items in List:
+        print (Items)
+
+def ReadDictionary(List,Dict):
+    for Items in List:
+        for Key, Values in Dict.items():
+            
+            #if the key in dict equals items in list: print
+            if Key==Items:
+                print (Key, Values)
+                
+    #catch the condition when OPR3300 and 3450 are both in list, 
+    if ('OPR3300/OPR3450' in List):
+        print('OPR3300/OPR3450 '+'Quantitative Methods for Accounting / Quantitative Decision Making for Business I')
+
+#output the courses left and check completing status
+def Check_Completion(Required_List, Elective_List, Elective_Count, \
+                     R_Dict, E_Dict):
+    
+
+    #Each time the elective is inputted, add to count, 
+    #once it reaches 4, return true
+    
+    if Required_List==[] and Elective_Count==4:
+        print()
+        print('***Major completed. No other courses necessary***')
+        
+    else:  
+        print()
+        print('The required courses left are:')
+        ReadDictionary(Required_List, R_Dict)
+        print()
+        print('The elective courses you can choose from are:')
+        ReadDictionary(Elective_List, E_Dict)
+
+#CYBERoutput the courses left and check completing status
+def Check_Completion_Cyber(Required_List, Elective_List, Elective_Count,\
+                          R_Dict,E_Dict):
+    
+
+    #Each time the elective is inputted, add to count, 
+    #once it reaches 3, return true
+    
+    if Required_List==[] and Elective_Count==3:
+        print()
+        print('***Major completed. No other courses necessary***')
+        
+    else:  
+        print()
+        print('The required courses left are:')
+        ReadDictionary(Required_List, R_Dict)
+        print()
+        print('The elective courses you can choose from are:')
+        ReadDictionary(Elective_List, E_Dict)
+
+def main ():
+    print('1: General CIS')
+    print('2: Data Analytics')
+    print('3: Information Risk Management and Cybersecurity')
+
+    #track validation
+    GotValidTrackIn=False
+    while not GotValidTrackIn:
+        try:
+            TrackIn=int(input('What CIS track are you taking? '))
+            GotValidTrackIn=True
+        except ValueError:
+            print('Invalid selection.')
+            continue
+    
+    #not in menu range
+    if TrackIn>3 or TrackIn<1:
+            print('Invalid selection. Program ending...')
+
+    #input validation for course amount
+    GotValidCourseAmt=False
+    CourseAmount=9
+    while (not GotValidCourseAmt) and (1<=TrackIn<=3):
+        try:
+            CourseAmount=int(input('How many courses have you taken? '))
+            while CourseAmount<0 or CourseAmount>8:
+                print('Invalid selection.')
+                print('Please Enter a number within range 0 to 8.')
+                CourseAmount=int(input('How many courses have you taken? '))
+            GotValidCourseAmt=True
+        except ValueError:
+            print('Invalid selection.')
+            print('Please Enter a number within range 0 to 8.')
+            continue
+    
+    #CONDITION: general track
+    if TrackIn==1:
+        
+        #load the files and data
+        GeneralFile()
+        GeneralFile2()
+
+        #Open the required and electives for general track
+        GeneralReq=open('General CIS Track Required Courses.txt','r')
+        GeneralElect=open('General CIS Track Elective Courses.txt','r')
+
+        #Make the two files into lists
+        ReqList=MakeList(GeneralReq)
+        EleList=MakeList(GeneralElect)
+
+        #new list after "taken courses"
+        ReqList, EleList, ElectCount = TakenClasses(CourseAmount,ReqList,EleList)
+
+        
+        #if taken OPR3300 or 3450 but not both
+        if ('OPR3300' not in EleList) and 'OPR3450' in EleList:
+            EleList.remove('OPR3450')
+        if ('OPR3450' not in EleList) and 'OPR3300' in EleList:
+            EleList.remove('OPR3300')
+            
+        
+        
+        #checking for OPR3300 and 3450
+        for Items in EleList:
+            for Items2 in EleList:
+                if Items=='OPR3300' and Items2=='OPR3450':
+                    EleList.remove('OPR3300')
+                    EleList.remove('OPR3450')
+                    EleList.append('OPR3300/OPR3450')
+        
+        Check_Completion(ReqList,EleList,ElectCount,GeneralReqDict, GeneralEleDict)
+
+        #File close
+        GeneralReq.close()
+        GeneralElect.close()   
+        
+    #CONDITION: analytic track
+    elif TrackIn==2:
+        #load the files and data
+        AnalyticFile()
+        AnalyticFile2()
+
+        #Open the required and electives for general track
+        AnalyticReq=open('Data Analytics Track Required Courses.txt','r')
+        AnalyticElect=open('Data Analytics Track Elective Courses.txt','r')
+
+        #Make the two files into lists
+        ReqList=MakeList(AnalyticReq)
+        EleList=MakeList(AnalyticElect)
+                
+        #new list after "taken courses"
+        ReqList, EleList, ElectCount = AnalyticTakenClass(CourseAmount,ReqList,EleList)
+        
+        Check_Completion(ReqList,EleList,ElectCount, AnalyticReqDict, AnalyticEleDict)
+
+        #File close
+        AnalyticReq.close()
+        AnalyticElect.close()
+        
+    #CONDITION: cybersecurity track
+    elif TrackIn==3:
+        #load the files and data
+        CyberFile()
+        CyberFile2()
+
+        #Open the required and electives for general track
+        CyberReq=open('Information Risk Management and Cybersecurity Track Required Courses.txt','r')
+        CyberElect=open('Information Risk Management and Cybersecurity Track Elective Courses.txt','r')
+
+        #Make the two files into lists
+        ReqList=MakeList(CyberReq)
+        EleList=MakeList(CyberElect)
+
+        #new list after "taken courses"
+        ReqList, EleList, ElectCount = TakenClasses(CourseAmount,ReqList,EleList)
+
+        Check_Completion_Cyber(ReqList,EleList,ElectCount,CyberReqDic,CyberEleDict)
+
+        #File close
+        CyberReq.close()
+        CyberElect.close()
+
+main()
